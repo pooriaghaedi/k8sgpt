@@ -5,5 +5,5 @@ set -eu
 
 export PLATFORM="github"
 
-RESULT=$(/k8sgpt analyze --explain)
+RESULT=$(k8sgpt analyze --explain)
 echo "RESULT=$RESULT" >> $GITHUB_OUTPUT
