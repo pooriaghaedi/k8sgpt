@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY ./ ./
 
-RUN go build -o /workspace/k8sgpt ./
+RUN chmod +x entrypoint.sh && go build -o /workspace/k8sgpt ./
 
 FROM gcr.io/distroless/static AS production
 
