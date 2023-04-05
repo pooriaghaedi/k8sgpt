@@ -1,0 +1,27 @@
+name: 'CodeGPT'
+description: 'Github Action for CodeGPT'
+inputs:
+  OPENAI_API_KEY:  # Open AI API Key
+    description: 'Open AI API Key'
+    required: true
+    default: ''
+  OPENAI_BASE_URL:  # Open AI Base URL
+    description: 'Open AI Base URL'
+    required: true
+    default: 'https://api.openai.com/v1'
+  OPENAI_ORG_ID:  # Open AI ORG ID
+    description: 'Open AI ORG ID'
+    required: false
+    default: ''
+  OPENAI_MODEL:  # Open AI Model
+    description: 'Open AI Model'
+    required: false
+    default: 'gpt-3.5-turbo' 
+outputs:
+  REVIEW: # Code review 
+    description: 'Code review'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.OPENAI_API_KEY }}
