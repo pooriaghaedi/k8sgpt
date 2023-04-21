@@ -7,7 +7,7 @@ WORKDIR /app
 COPY entrypoint.sh /app/entrypoint.sh
 
 RUN apk add --no-cache ca-certificates git curl && \
-  rm -rf /var/cache/apk  /* && \
+    rm -rf /var/cache/apk/*&& \
     LATESTVER=$(curl --silent "https://api.github.com/repos/k8sgpt-ai/k8sgpt/releases/latest" | \
     grep '"tag_name":'  | \
     sed -E 's/.*"([^"]+)".*/\1/') && \
